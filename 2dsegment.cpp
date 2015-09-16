@@ -19,7 +19,9 @@ using namespace std;
 //Static 2D segment tree for sorted 2D array
 
 vector<vector<int> > tree;
+
 int a[801][801];
+
 vector<int> build(int i, int x1, int x2, int y1, int y2)
 {
 	if (x1 > x2 || y1 > y2) return vector<int>();
@@ -55,6 +57,7 @@ vector<int> build(int i, int x1, int x2, int y1, int y2)
 	return tree[i];
 }
 
+//Get number of elements <= x in submatrix (x1,y1) => (x2, y2)
 int query(int i, int x1, int x2, int y1, int y2, int a, int b, int c, int d, int x)
 {
 	if (x1 > x2 || y1 > y2) return 0;
